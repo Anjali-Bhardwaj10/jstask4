@@ -16,7 +16,7 @@
   <form id="infoForm">
     Name: <input type="text" id="name"><br><br>
     
-    <!-- E-mail input -->
+
     E-mail: <input type="text" id="email"><br><br>
 
     Qualification: <input type="text" id="qualification"><br><br>
@@ -47,7 +47,7 @@
   <p id="datetime"></p>
 
   <script>
-    // Display Form Info
+    
     function displayInfo() {
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
@@ -62,12 +62,12 @@
       document.getElementById('output').innerHTML = output;
     }
 
-    // Change Image
+
     function changeImage() {
       document.getElementById('myImage').src = "horseride.jpeg"
     }
 
-    // Change Font Size
+    
     let fontSize = 16;
     function changeFontSize(action) {
       if (action === 'increase') fontSize += 2;
@@ -75,7 +75,7 @@
       document.getElementById('text').style.fontSize = fontSize + 'px';
     }
 
-    // Show Current Date & Time
+
     function showDateTime() {
       const now = new Date();
       document.getElementById('datetime').innerText = now.toString();

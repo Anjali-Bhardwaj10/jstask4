@@ -1,0 +1,88 @@
+
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Task</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    #output, #datetime { margin-top: 20px; }
+    #text { margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <h2>Basic Information Form</h2>
+  <form id="infoForm">
+    Name: <input type="text" id="name"><br><br>
+    
+    <!-- E-mail input -->
+    E-mail: <input type="text" id="email"><br><br>
+
+    Qualification: <input type="text" id="qualification"><br><br>
+    <button type="button" onclick="displayInfo()">Submit</button>
+  </form>
+
+  <div id="output"></div>
+
+  <hr>
+
+  <h2>Image Changer</h2>
+  
+  <img id="myImage" src="girl.jpg" width="150">
+  <br>
+  <button onclick="changeImage()">Change Image</button>
+
+  <hr>
+
+  <h2>Text Font Size Controller</h2>
+  <p id="text">Thank you ATPLC for being a guiding light in my learning journey. Your platform helped me grow with clarity.</p>
+  <button onclick="changeFontSize('increase')">Increase Font</button>
+  <button onclick="changeFontSize('decrease')">Decrease Font</button>
+
+  <hr>
+
+  <h2>Show Current Date & Time</h2>
+  <button onclick="showDateTime()">Show Date & Time</button>
+  <p id="datetime"></p>
+
+  <script>
+    // Display Form Info
+    function displayInfo() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const qualification = document.getElementById('qualification').value;
+
+      const output = `
+        <h3>Your Info:</h3>
+        <p>Name: ${name}</p>
+        <p>Email: ${email}</p>
+        <p>Qualification: ${qualification}</p>
+      `;
+      document.getElementById('output').innerHTML = output;
+    }
+
+    // Change Image
+    function changeImage() {
+      document.getElementById('myImage').src = "horseride.jpeg"
+    }
+
+    // Change Font Size
+    let fontSize = 16;
+    function changeFontSize(action) {
+      if (action === 'increase') fontSize += 2;
+      else if (action === 'decrease') fontSize -= 2;
+      document.getElementById('text').style.fontSize = fontSize + 'px';
+    }
+
+    // Show Current Date & Time
+    function showDateTime() {
+      const now = new Date();
+      document.getElementById('datetime').innerText = now.toString();
+    }
+  </script>
+
+</body>
+</html>
+
+
